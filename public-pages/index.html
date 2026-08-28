@@ -197,18 +197,46 @@
           </li>
         </ul>
         <div class="price">
-          De <s>R$ 97,00</s> por apenas<strong>R$ 27,00</strong>
+          De <s>R$ 97,00</s> por apenas<strong>R$ 47,00</strong>
         </div>
-        <button class="cta">SIM, QUERO ADICIONAR À MINHA COMPRA</button>
+        <div
+          style="display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer; margin-top: 24px"
+        >
+          <div
+            class="button-default button-accept"
+            style="width: 100%; padding: 17px 32px; line-height: 22px; border-radius: 12px; font-weight: 700; background-color: rgb(52, 226, 60); color: #000; text-align: center"
+            id="llupsell-CED18D1C8-"
+          >Quero comprar agora!</div>
+          <div
+            class="button-default button-deny"
+            style="width: 100%; text-decoration: underline; line-height: 22px; font-size: 16px; font-weight: 700; color: #000; text-align: center"
+            id="denyButtoncc16969"
+          >Recusar esta oferta</div>
+        </div>
         <p class="safe">Compra segura · Acesso imediato · Garantia de 7 dias</p>
       </section>
-      <button class="decline">
-        Não, obrigado. Quero continuar sem esta oferta.
-      </button>
     </main>
     <script
       src="https://scripts.converteai.net/f7f63c56-fc11-4d6b-889e-71d2f24f657c/players/6a3dd5a5583018d5609e6916/v4/player.js"
       async
     ></script>
+    <script src="https://cdn.lastlink.com/upsell.min.js"></script>
+    <script>
+      var upsellRedirect = "https://lastlink.com/app/member/dashboardV2";
+      function setupDenyButtons() {
+        document.querySelectorAll('[id^="denyButton"]').forEach(function (button) {
+          button.onclick = function () {
+            var currentUrl = new URL(window.location.href);
+            var newUrl = new URL(upsellRedirect);
+            currentUrl.searchParams.forEach(function (value, key) {
+              newUrl.searchParams.append(key, value);
+            });
+            window.location.href = newUrl.toString();
+          };
+        });
+      }
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setupDenyButtons);
+      else setupDenyButtons();
+    </script>
   </body>
 </html>

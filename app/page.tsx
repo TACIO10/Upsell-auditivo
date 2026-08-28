@@ -25,11 +25,28 @@ export default function Home() {
               <li key={item} className="flex gap-3"><span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e9f5e8] text-[12px] font-bold text-[#33733c]">✓</span>{item}</li>
             ))}
           </ul>
-          <div className="mt-6 text-center"><p className="text-sm text-[#777066]">De <span className="line-through">R$ 97,00</span> por apenas</p><p className="mt-1 text-[36px] font-black leading-none tracking-[-0.04em] text-[#201f1c]">R$ 27,00</p></div>
-          <button className="mt-6 w-full rounded-2xl bg-[#247a42] px-5 py-4 text-[16px] font-extrabold text-white shadow-[0_9px_0_#15532b] transition active:translate-y-1 active:shadow-[0_5px_0_#15532b]">SIM, QUERO ADICIONAR À MINHA COMPRA</button>
+          <div className="mt-6 text-center"><p className="text-sm text-[#777066]">De <span className="line-through">R$ 97,00</span> por apenas</p><p className="mt-1 text-[36px] font-black leading-none tracking-[-0.04em] text-[#201f1c]">R$ 47,00</p></div>
+          <div className="mt-6 flex cursor-pointer flex-col items-center gap-6 font-sans">
+            <div className="button-default button-accept w-full rounded-xl bg-[#34e23c] px-8 py-[17px] text-center text-[16px] font-bold leading-[22px] text-black shadow-[0_7px_0_#1b9121]" id="llupsell-CED18D1C8-">Quero comprar agora!</div>
+            <div className="button-default button-deny w-full text-center text-[16px] font-bold leading-[22px] text-black underline" id="denyButtoncc16969">Recusar esta oferta</div>
+          </div>
           <p className="mt-4 text-center text-[11px] leading-4 text-[#8a8379]">Compra segura · Acesso imediato · Garantia de 7 dias</p>
         </section>
-        <button className="mx-auto mt-7 text-xs text-[#8a8379] underline decoration-[#bbb3a7] underline-offset-4">Não, obrigado. Quero continuar sem esta oferta.</button>
+        <Script src="https://cdn.lastlink.com/upsell.min.js" strategy="afterInteractive" />
+        <Script id="lastlink-deny" strategy="afterInteractive">{`
+          var upsellRedirect = "https://lastlink.com/app/member/dashboardV2";
+          function setupDenyButtons() {
+            document.querySelectorAll('[id^="denyButton"]').forEach(function(button) {
+              button.onclick = function() {
+                var currentUrl = new URL(window.location.href);
+                var newUrl = new URL(upsellRedirect);
+                currentUrl.searchParams.forEach(function(value, key) { newUrl.searchParams.append(key, value); });
+                window.location.href = newUrl.toString();
+              };
+            });
+          }
+          setupDenyButtons();
+        `}</Script>
       </div>
     </main>
   );
