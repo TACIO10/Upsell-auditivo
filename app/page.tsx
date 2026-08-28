@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fffaf2] text-[#25231f]">
@@ -11,12 +13,12 @@ export default function Home() {
           <p className="mx-auto mt-4 max-w-[330px] text-[16px] leading-6 text-[#676158]">Assista ao vídeo abaixo. São menos de 2 minutos e ele pode transformar o seu resultado.</p>
         </header>
         <section aria-label="Vídeo da oferta" className="mt-7">
-          <div className="relative aspect-video overflow-hidden rounded-[22px] bg-[#171714] shadow-[0_18px_45px_rgba(45,37,23,0.22)] ring-1 ring-black/10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,#3c3931_0%,#181714_60%)]" />
-            <div className="absolute left-4 top-4 rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white/80 backdrop-blur">Assista agora · 1:47</div>
-            <button type="button" aria-label="Reproduzir vídeo" className="absolute left-1/2 top-1/2 flex h-[74px] w-[74px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#ffb43f] text-[#2c2417] shadow-[0_10px_30px_rgba(255,180,63,0.35)] transition active:scale-95"><span className="ml-1 text-[30px] leading-none" aria-hidden="true">▶</span></button>
-            <div className="absolute bottom-0 left-0 h-1 w-1/3 bg-[#ffb43f]" />
+          <div className="overflow-hidden rounded-[22px] bg-black shadow-[0_18px_45px_rgba(45,37,23,0.22)] ring-1 ring-black/10">
+            <vturb-smartplayer id="vid-6a3dd5a5583018d5609e6916" style={{ display: 'block', margin: '0 auto', width: '100%' }}>
+              <div className="vturb-player-placeholder" style={{ position: 'relative', width: '100%', padding: '56.25% 0 0', zIndex: 0, backgroundColor: 'black' }} />
+            </vturb-smartplayer>
           </div>
+          <Script src="https://scripts.converteai.net/f7f63c56-fc11-4d6b-889e-71d2f24f657c/players/6a3dd5a5583018d5609e6916/v4/player.js" strategy="afterInteractive" />
           <p className="mt-3 flex items-center justify-center gap-2 text-center text-xs font-medium text-[#777066]"><span aria-hidden="true">🔊</span> Verifique se o seu som está ligado</p>
         </section>
         <section className="mt-8 rounded-[24px] border border-[#e8dfd0] bg-white p-5 shadow-[0_14px_38px_rgba(54,43,25,0.08)]">
