@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+* { box-sizing: border-box; }
+html { background: #fffaf2; }
+body { margin: 0; font-family: var(--font-sans), sans-serif; }
+button { cursor: pointer; }
+::selection { background: #ffdda5; color: #201f1c; }
