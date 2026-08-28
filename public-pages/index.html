@@ -200,7 +200,8 @@
           De <s>R$ 97,00</s> por apenas<strong>R$ 47,00</strong>
         </div>
         <div
-          style="display: flex; flex-direction: column; gap: 24px; align-items: center; cursor: pointer; margin-top: 24px"
+          id="upsellActions"
+          style="display: none; flex-direction: column; gap: 24px; align-items: center; cursor: pointer; margin-top: 24px"
         >
           <div
             class="button-default button-accept"
@@ -235,8 +236,17 @@
           };
         });
       }
+      var upsellActions = document.getElementById("upsellActions");
+      if (upsellActions) upsellActions.style.display = "none";
       if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setupDenyButtons);
       else setupDenyButtons();
+      window.setTimeout(function () {
+        var actions = document.getElementById("upsellActions");
+        if (actions) {
+          actions.style.display = "flex";
+          setupDenyButtons();
+        }
+      }, 220000);
     </script>
   </body>
 </html>

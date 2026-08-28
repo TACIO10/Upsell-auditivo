@@ -26,7 +26,7 @@ export default function Home() {
             ))}
           </ul>
           <div className="mt-6 text-center"><p className="text-sm text-[#777066]">De <span className="line-through">R$ 97,00</span> por apenas</p><p className="mt-1 text-[36px] font-black leading-none tracking-[-0.04em] text-[#201f1c]">R$ 47,00</p></div>
-          <div className="mt-6 flex cursor-pointer flex-col items-center gap-6 font-sans">
+          <div id="upsellActions" className="mt-6 hidden cursor-pointer flex-col items-center gap-6 font-sans">
             <div className="button-default button-accept w-full rounded-xl bg-[#34e23c] px-8 py-[17px] text-center text-[16px] font-bold leading-[22px] text-black shadow-[0_7px_0_#1b9121]" id="llupsell-CED18D1C8-">Quero comprar agora!</div>
             <div className="button-default button-deny w-full text-center text-[16px] font-bold leading-[22px] text-black underline" id="denyButtoncc16969">Recusar esta oferta</div>
           </div>
@@ -46,6 +46,13 @@ export default function Home() {
             });
           }
           setupDenyButtons();
+          window.setTimeout(function() {
+            var actions = document.getElementById('upsellActions');
+            if (actions) {
+              actions.style.display = 'flex';
+              setupDenyButtons();
+            }
+          }, 220000);
         `}</Script>
       </div>
     </main>
