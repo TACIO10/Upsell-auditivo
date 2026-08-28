@@ -3,12 +3,8 @@ import Script from 'next/script';
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fffaf2] text-[#25231f]">
-      <div className="mx-auto flex min-h-screen w-full max-w-[460px] flex-col px-5 pb-10 pt-5">
-        <div className="mb-7 flex items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#756f65]">
-          <span className="h-px w-6 bg-[#d6cec0]" /> Oferta única <span className="h-px w-6 bg-[#d6cec0]" />
-        </div>
+      <div className="mx-auto flex min-h-screen w-full max-w-[460px] flex-col px-5 pb-10 pt-7">
         <header className="text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#fff0d5] text-2xl shadow-[inset_0_0_0_1px_#f0d6a7]" aria-hidden="true">✋</div>
           <h1 className="font-serif text-[34px] font-bold leading-[1.02] tracking-[-0.035em] text-[#201f1c]">Espere, sua compra ainda não foi finalizada.</h1>
           <p className="mx-auto mt-4 max-w-[330px] text-[16px] leading-6 text-[#676158]">Assista ao vídeo abaixo. São menos de 2 minutos e ele pode transformar o seu resultado.</p>
         </header>
